@@ -1,11 +1,12 @@
 <script setup>
-
+ import inputTag from './components/inputTag.vue';
 </script>
 
 <template>
-  <h1>Hola mundo</h1>
+  <inputTag />
 </template>
 
 <style scoped>
 
 </style>
+ 
