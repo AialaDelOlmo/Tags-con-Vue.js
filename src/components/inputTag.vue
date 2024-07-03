@@ -13,6 +13,12 @@
                 this.tags.push(this.currentValue);
                 this.currentValue="";
             }
+        },
+        handleSubmit(){
+            if(this.currentValue != ""){
+                this.tags.push(this.currentValue);
+                this.currentValue="";
+            }
         }
     }
 }
@@ -25,7 +31,9 @@
                 {{ tag }}
             </div>
         </div>
-    <input type="text" v-model="currentValue" @keydown="handlekeyDown">
+        <form @submit.prevent="handleSubmit">
+            <input type="text" v-model="currentValue">
+        </form>
     </div>
 </template>
 
