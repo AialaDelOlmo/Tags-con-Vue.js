@@ -3,10 +3,19 @@
         data() {
             return{
                 currentValue: "",
-                tags: ['un', 'dos', 'tres'],
+                tags: [],
+            
+        };
+    },
+    methods: {
+        handlekeyDown(e){
+            if(e.key ==='Enter' && this.currentValue != ""){
+                this.tags.push(this.currentValue);
+                this.currentValue="";
             }
         }
     }
+}
 </script>
 
 <template>
@@ -16,7 +25,7 @@
                 {{ tag }}
             </div>
         </div>
-    <input type="text" v-model="currentValue">
+    <input type="text" v-model="currentValue" @keydown="handlekeyDown">
     </div>
 </template>
 
