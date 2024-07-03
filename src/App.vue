@@ -13,7 +13,7 @@
 </script>
 
 <template>
-  <inputTag />
+  <inputTag @onTagsChange="handleOnTagsChange" />
 </template>
 
 <style scoped>

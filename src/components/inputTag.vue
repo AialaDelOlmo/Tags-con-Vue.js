@@ -1,6 +1,6 @@
 <script>
     export default{
-        props: ["onTagsChange"],
+        emits: ["onTagsChange"],
         data() {
             return{
                 currentValue: "",
@@ -14,7 +14,8 @@
                // this.tags.push(this.currentValue);
                 //this.currentValue="";
                 this.tags.pop();
-                this.onTagsChange(this.tags);
+                //this.onTagsChange(this.tags);
+                this.$emit('onTagsChange', this.tags);
             }
         },
         handleSubmit(){
@@ -23,13 +24,15 @@
                 if(!exits){
                     this.tags.push(this.currentValue);
                     this.currentValue="";
-                    this.onTagsChange(this.tags);
+                    //this.onTagsChange(this.tags);
+                    this.$emit('onTagsChange', this.tags);
                 }
             }
         },
         deleteTag(tag){
             this.tags = this.tags.filter(item => item != tag);
-            this.onTagsChange(this.tags);
+            //this.onTagsChange(this.tags);
+            this.$emit('onTagsChange', this.tags);
         }
     }
 }
