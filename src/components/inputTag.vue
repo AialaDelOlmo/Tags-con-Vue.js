@@ -16,8 +16,11 @@
         },
         handleSubmit(){
             if(this.currentValue != ""){
-                this.tags.push(this.currentValue);
-                this.currentValue="";
+                const exits = this.tags.some(item => item === this.currentValue)
+                if(!exits){
+                    this.tags.push(this.currentValue);
+                    this.currentValue="";
+                }
             }
         },
         deleteTag(tag){
