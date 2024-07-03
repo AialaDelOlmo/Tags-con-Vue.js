@@ -46,5 +46,40 @@
 </template>
 
 <style scoped>
-
+    .inputTag{
+        display: inline-flex;
+        border: solid 1px #000000;
+        border-radius: 3px;
+        height: 43px;
+    }
+    .tags{
+        display: flex;
+        gap: 3px;
+        padding: 5px;
+    }
+    .tags .tag {
+        display: flex;
+        padding: 5px;
+        border: solid 1px #cccc;
+        gap: 5px;
+        align-content: center;
+        border-radius: 3px;
+    }
+    .inputTag form {
+        display: inline-flex;
+    }
+    .inputTag .input {
+        border: none;
+        outline: none;
+        padding: 0px 5px;
+    }
+    .inputTag button {
+        background-color: transparent;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .tag button:hover {
+        background-color: #eeee;
+    }
 </style>
